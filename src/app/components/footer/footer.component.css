@@ -1,0 +1,18 @@
+
+.test-input:focus{
+ background-color: orange;
+ border: 0;
+ outline: none;
+}
+
+.test:hover{
+
+  background-color: orange;
+  border: 0;
+}
+
+.foot{
+  display: flex;
+  flex-direction: column;
+  min-height: 52vh;
+}

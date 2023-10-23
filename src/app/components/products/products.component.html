@@ -1,0 +1,105 @@
+<!-- <div class="card" style="width: 18rem;">
+  <img src="assets/pexels-math-90946.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{productName}}</h5>
+    <p class="card-text">Quantity : {{productQuantity}}</p>
+    <p class="card-text">Price : {{displayPrice()}}</p>
+
+    <a href="" class="btn btn-primary">Add to Card</a>
+  </div>
+</div> -->
+
+
+
+<!-- Day2 -->
+  <!-- <img [src]="s.logo" class="img-fluid" *ngIf="flagImage"> -->
+  <!-- <button class="btn btn-danger" (click)="toggleImage()">Show/Hide Logo</button> -->
+<!-- Day3 -->
+<br>
+
+
+
+<select name="sel" id="sel" class="form-control mb-4" [(ngModel)]="selectCat">
+  <option class="bg-warning" value="0">All</option>
+  <option class="bg-warning" *ngFor="let cat of catList" [value]="cat.categoryId">{{cat.categoryName}}</option>
+</select>
+
+
+
+  <div class="row">
+    <!-- <div class="col-md-4 mb-3" *ngFor="let prd of productList" appDi  [ngClass]="{'bg-info':prd.productQuantity==0,'bg-white':prd.productQuantity>1}"> -->
+      <!-- <ng-container  *ngFor="let prd of productsAfterFilter" > -->
+  <ng-container  *ngFor="let prd of productList " >
+      <div class="col-md-4 "*ngIf="selectCat==prd.categoryId||selectCat==0" >
+
+
+        <div class="d-flex flex-column align-items-strech shadow p-3 mb-5 bg-white rounded">
+          <div class=" d-flex flex-column">
+              <img [src]="prd.productImage" class="img-fluid img-hover" [routerLink]="['/ProductDetails',prd.productId]">
+              <h4 class="pt-2 text-start">Black Camera</h4>
+              <h6>Price : {{prd.productPrice|currency}}</h6>
+              <h6>Quantity : {{prd.productQuantity}}</h6>
+              <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-success" [disabled]="prd.productQuantity==0">BUY</button>
+                <button type="button" class="btn btn-outline-danger" [routerLink]="['/ProductDetails',prd.productId]">DETAILS</button>
+                </div>
+                <div [ngSwitch]="prd.productQuantity">
+                  <div *ngSwitchCase="0">Out of stock</div>
+                  <div *ngSwitchCase="1">Last One Item</div>
+                  <div *ngSwitchCase="2">Last Two Items</div>
+                  <div *ngSwitchDefault>In Stock</div>
+                </div>
+          </div>
+      </div>
+
+
+<!-- another card -->
+        <!-- <img [src]="prd.productImage" class="img-fluid"> -->
+        <!-- Day3 -->
+        <!-- <h3>{{prd.productName|uppercase}}</h3> -->
+        <!-- <h3>{{prd.productName|lowercase}}</h3> -->
+        <!-- <h3>{{prd.productName}}</h3> -->
+<!-- Day3 -->
+        <!-- <h5>Price : {{prd.productPrice}}</h5> -->
+        <!-- <h5>Price : {{prd.productPrice|currency}}</h5> -->
+        <!-- <h5>Price : {{prd.productPrice|currency:'EGP'}}</h5> -->
+        <!-- <h5>Quantity : {{prd.productQuantity}}</h5> -->
+        <!-- <p *ngIf="flagText">Thanks for purchasing from our Store : <br>{{clientName}}</p> -->
+        <!-- <button class="btn btn-info" [routerLink]="['/ProductDetails',prd.productId]">Details</button> -->
+        <!-- <button class="btn btn-success" [disabled]="prd.productQuantity==0" (click)="prd.productQuantity=prd.productQuantity-1" (click)="toggletext()">Buy</button> -->
+        <!-- <button class="btn btn-success" [disabled]="prd.productQuantity==0">Buy</button> -->
+
+        <!-- <div [ngSwitch]="prd.productQuantity">
+          <div *ngSwitchCase="0">Out of stock</div>
+          <div *ngSwitchCase="1">Last One Item</div>
+          <div *ngSwitchCase="2">Last Two Item</div>
+          <div *ngSwitchDefault>In Stock</div>
+        </div> -->
+    </div>
+  </ng-container>
+
+
+    <!-- Day3 -->
+    <!-- <h4>{{localDate|date:'short'}}</h4> -->
+
+    <!-- <input maxlength="16" type="text" [(ngModel)]="clientName" class="form-control">
+    <h2>{{clientName|pipe1}}</h2> -->
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
